@@ -1,7 +1,7 @@
 {
   "name": "hello-astro",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
@@ -13,7 +13,11 @@
   "dependencies": {
     "@astrojs/check": "^0.8.2",
     "@astrojs/vercel": "^7.7.2",
+    "@muzalab/easyspot": "^0.0.7",
     "astro": "^4.12.2",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12"
   }
 }
