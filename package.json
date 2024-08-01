@@ -1,5 +1,6 @@
 {
   "name": "hello-astro",
+  "description": "astro + elysia + swagger + vercel",
   "type": "module",
   "version": "0.1.0",
   "license": "MIT",
