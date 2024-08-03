@@ -2,7 +2,7 @@
   "name": "@muzamint/hello-astro",
   "description": "astro + elysia + swagger + vercel",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
