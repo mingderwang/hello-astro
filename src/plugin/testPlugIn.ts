@@ -1,5 +1,5 @@
 import { Elysia } from 'elysia'
 
-export const plugin = new Elysia()
+export const testPlugIn = new Elysia()
     .decorate('plugin', 'hi')
     .get('/plugin', ({ plugin }) => plugin)

@@ -7,11 +7,6 @@ const app = new Elysia()
     .use(swagger())
     .use(testPlugIn)
     .get('/api', () => 'hi')
-    .post('/api', ({ body }) => body, {
-        body: t.Object({
-            name: t.String()
-        })
-    })
 
 const handle = ({ request }: { request: Request }) => 
    app.handle(request) 
