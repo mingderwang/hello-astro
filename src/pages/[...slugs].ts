@@ -7,8 +7,6 @@ import { generateAuthenticationOptions } from "@simplewebauthn/server";
 import type { GenerateRegistrationOptionsOpts } from "@simplewebauthn/server";
 import { base64UrlEncode } from '../utils'
 const {
-  ENABLE_CONFORMANCE,
-  ENABLE_HTTPS,
   RP_ID = 'localhost',
 } = process.env;
 const rpID = RP_ID;

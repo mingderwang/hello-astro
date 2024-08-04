@@ -1,4 +1,4 @@
-export function base64UrlEncode(uint8Array) {
+export function base64UrlEncode(uint8Array: Uint8Array) {
     // Convert Uint8Array to a binary string
     let binaryString = "";
     for (let i = 0; i < uint8Array.length; i++) {
