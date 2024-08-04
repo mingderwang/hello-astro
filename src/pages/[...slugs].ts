@@ -2,6 +2,7 @@
 import { Elysia, t } from 'elysia'
 import { swagger } from '@elysiajs/swagger'
 import { testPlugIn } from '../plugin/testPlugIn'
+import { cron } from '@elysiajs/cron'
 
 const app = new Elysia()
     .use(swagger())
@@ -24,6 +25,15 @@ const app = new Elysia()
                 age: t.Number()
             })
         }
+    )
+    .use(
+        cron({
+            name: 'heartbeat',
+            pattern: '*/5 * * * * *',
+            run() {
+                console.log(new Date().toString())
+            }
+        })
     )
 
 export type App = typeof app
