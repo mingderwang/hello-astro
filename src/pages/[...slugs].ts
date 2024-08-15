@@ -12,12 +12,21 @@ const {
 const rpID = RP_ID;
 const username = 'ming';
 const devices: any = [];
+
+function generateChallenge() {
+  const challenge = new Uint8Array(86); // 32 bytes = 256 bits
+  crypto.getRandomValues(challenge);
+  return challenge;
+}
+
+
 const opts: GenerateRegistrationOptionsOpts = {
   rpName: 'SimpleWebAuthn Example',
   rpID,
   userName: username,
   timeout: 60000,
   attestationType: 'none',
+  challenge: generateChallenge(),
   /**
    * Passing in a user's list of already-registered authenticator IDs here prevents users from
    * registering the same device multiple times. The authenticator will simply throw an error in
@@ -42,7 +51,6 @@ const opts: GenerateRegistrationOptionsOpts = {
    * Support the two most common algorithms: ES256, and RS256
    */
   supportedAlgorithmIDs: [-7, -257],
-  challenge: crypto.getRandomValues(new Uint8Array(32)) 
 };
 
 const plugin = <T extends string>(config: { prefix: T }) =>
@@ -96,9 +104,9 @@ const app = new Elysia()
   .use(
     cron({
       name: "heartbeat",
-      pattern: "* 30 * * * *",
+      pattern: "* * * * * *",
       run() {
-        console.log("休息30分鐘" + new Date().toString());
+        console.log("休息10分鐘" + new Date().toString());
       },
     })
   );

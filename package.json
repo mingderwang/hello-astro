@@ -19,7 +19,9 @@
     "@simplewebauthn/server": "^10.0.1",
     "astro": "^4.12.2",
     "elysia": "^1.1.4",
-    "typescript": "^5.5.4"
+    "fido2-lib": "^3.5.3",
+    "typescript": "^5.5.4",
+    "zeed": "^0.22.10"
   },
   "devDependencies": {
     "@types/node": "^20.14.12"
