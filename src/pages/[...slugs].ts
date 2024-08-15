@@ -104,7 +104,7 @@ const app = new Elysia()
   .use(
     cron({
       name: "heartbeat",
-      pattern: "* * * * * *",
+      pattern: "1 1 * * * *",
       run() {
         console.log("休息10分鐘" + new Date().toString());
       },
